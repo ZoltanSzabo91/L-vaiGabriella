@@ -2,17 +2,19 @@
 <html lang="hun">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <link href="css/css.css" rel="stylesheet">
         <title>Lévai Gabriella</title>
     </head>
     <body>
         <nav class="menu">
             <a href="#hero"><img src="pictures/Logoinverse.png" alt="logo"></a>
+            <button onclick="changetheme()"  class="btn" style="height: 15px; margin: 2.1rem;">Theme</button>
             <ul>
                 <li><a href="#aboutme">Rólam</a></li>
                 <li><a href="#services">Szolgáltatások</a></li>
                 <li><a href="#galery">Galéria</a></li>
-                <li><a href="#">Kapcsolat</a></li>
+                <li><a href="#footer">Kapcsolat</a></li>
             </ul>            
         </nav>
 
@@ -50,8 +52,8 @@
                 <div class="services init">
 
                     <div class="services-card">
-                        <h3>Személyi Edzés</h3>
-                        <img src="pictures/egyeniedzes.png" alt="egyéni edzés">
+                        <h3>Egyéni Edzés</h3>
+                        <img id="solo" src="pictures/egyeniedzes.png" alt="egyéni edzés">
                         <div class="hover_display">
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
                             <button class="btn">Bővebben</button>
@@ -60,7 +62,7 @@
                     
                     <div class="services-card">
                         <h3>Csoportos Edzések</h3>
-                        <img src="pictures/csoportosedzes.png" alt="csoportos edzés">
+                        <img id="group" src="pictures/csoportosedzes.png" alt="csoportos edzés">
                         <div class="hover_display">
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
                             <button class="btn">Bővebben</button>
@@ -69,7 +71,7 @@
 
                     <div class="services-card">
                         <h3>Kardio</h3>
-                        <img src="pictures/kardio.png" alt="kardio">
+                        <img id="kardio" src="pictures/kardio.png" alt="kardio">
                         <div class="hover_display">
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
                             <button class="btn">Bővebben</button>
@@ -78,7 +80,7 @@
 
                     <div class="services-card">
                         <h3>Táplálkozási Tanácsadás</h3>
-                        <img src="pictures/taplalkozas.png" alt="táplálkozási tanácsadás">
+                        <img id="food" src="pictures/taplalkozas.png" alt="táplálkozási tanácsadás">
                         <div class="hover_display">
                             <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
                             <button class="btn">Bővebben</button>
@@ -98,15 +100,15 @@
 
         </main>
 
-        <footer>
+        <footer id="footer">
             <div>
                 <h2>Keress Bizalommal!</h2>
                 <p>E-mail: l.gajoca@gmail.com</p>
                 <p>Tel: +3630 123 4567</p>
                 <p>Helyszínek:</p>
                 <div class="locations">
-                    <button class="btn" id="chilli2" onclick="setMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.3197027070355!2d19.0282250125388!3d47.464199097679156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741ddbfaca09e79%3A0xc4c6ed726deabed2!2sChilli%20Fitness%20Budapest%20-%20Bik%C3%A1s%20park!5e0!3m2!1shu!2shu!4v1777549927616!5m2!1shu!2shu', false)">Chili 2</button>
-                    <button class="btn" id="chilli5" onclick="setMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9894.543581890584!2d19.046688879663147!3d47.46031674938823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dda0591c70bf%3A0x5f9c98a872795306!2sChili%20Fitness%20Budapest%20-%20%C3%9Ajbuda!5e0!3m2!1shu!2shu!4v1777551209322!5m2!1shu!2shu', true)">Chili 5</button>
+                    <button class="btn" id="chilli2" onclick="setMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.3197027070355!2d19.0282250125388!3d47.464199097679156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741ddbfaca09e79%3A0xc4c6ed726deabed2!2sChilli%20Fitness%20Budapest%20-%20Bik%C3%A1s%20park!5e0!3m2!1shu!2shu!4v1777549927616!5m2!1shu!2shu', false)">Chili 2 Fitness</button>
+                    <button class="btn" id="chilli5" onclick="setMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9894.543581890584!2d19.046688879663147!3d47.46031674938823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dda0591c70bf%3A0x5f9c98a872795306!2sChili%20Fitness%20Budapest%20-%20%C3%9Ajbuda!5e0!3m2!1shu!2shu!4v1777551209322!5m2!1shu!2shu', true)">Chili 5 Fitness</button>
                 </div>
             </div>
             <iframe id="map"
