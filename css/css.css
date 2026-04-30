@@ -1,7 +1,9 @@
 :root {
     --primary: rgb(223, 0, 0);
+    --btnactive: rgb(153, 3, 3);
     --layout: #1b1b1b;
     --bg: #000000;
+    --bgop: rgb(0, 0, 0, 0.8);
     --line: #444444;
 
     --text: rgb(255, 255, 255);
@@ -26,7 +28,7 @@ body {
     top: 0;
     box-sizing: border-box;
     padding-right: 2rem;
-    background-color: var(--layout);
+    background-color: var(--bg);
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -159,12 +161,12 @@ body {
         /* tartalom */
 
 .content {
-    width: 80%;
+    width: 70%;
     /*max-width: 1000px;*/
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     padding-top: 3rem;
 }
 
@@ -283,3 +285,101 @@ body {
     flex: 0.6;
     z-index: 0;
 }
+
+
+        /* szolgáltatások */
+
+.services {
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+
+
+.services-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 250px;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px var(--primary), -1px -1px 1px var(--line), 4px 4px 8px var(--bg);
+    overflow: hidden;
+}
+
+.services-card img {
+    height: 180px;
+}
+
+.var2 {
+    background-color: var(--layout);
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-shadow: 1px 1px 1px var(--primary);
+}
+
+.hover_display {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    background-color: var(--bgop);
+    width: 100%;
+    border-radius: 8px;
+    opacity: 0;
+
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    height: 70%;
+    transform: translateY(100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover_display p {
+    padding: 1rem;
+}
+
+.services-card:hover .hover_display {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hover_display .btn {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.hover_display p {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.services-card:hover .hover_display .btn {
+    opacity: 1;
+}
+
+.services-card:hover .hover_display p {
+    opacity: 0.8;
+}
+
+
+footer {
+    background-color: var(--layout);
+}
+
+.btn.active {
+    background-color: var(--btnactive);
+}
+
+.btn.active:hover {
+    background-color: var(--primary);
+}
+
