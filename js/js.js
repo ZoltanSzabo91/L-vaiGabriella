@@ -33,11 +33,39 @@ function updateActive() {
     }
 }
 
-function changetheme() {
-    const root = document.documentElement;
-    root.classList.toggle("theme");
+    const buttons = document.querySelectorAll('.menu button');
 
-    const img1 = document.getElementById("solo");
+function changetheme(themeType) {
+    /*const root = document.documentElement;
+    root.classList.toggle("theme");*/
+    const root = document.documentElement;
+    root.classList.remove("gold", "blue", "green", "red", "purple");
+
+    switch(themeType){
+        case 'red':
+            root.classList.add("red");
+            break;
+
+        case 'blue':
+            root.classList.add("blue");
+            break;
+        
+        case 'purple':
+            root.classList.add("purple");
+            break;
+        
+        case 'gold':
+            root.classList.add("gold");
+            break;
+
+        case 'green':
+            root.classList.add("green");
+            break;
+    }};
+
+
+
+   /* const img1 = document.getElementById("solo");
     const img2 = document.getElementById("group");
     const img3 = document.getElementById("kardio");
     const img4 = document.getElementById("food");
@@ -52,8 +80,8 @@ function changetheme() {
         img2.src = "pictures/csoportosedzes.png";
         img3.src = "pictures/kardio.png";
         img4.src = "pictures/taplalkozas.png";  // alap verzió
-    }
-};
+    }*/
+
 
 /* js vége !!! bővítést csak feljebb */
 
