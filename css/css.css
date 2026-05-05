@@ -96,7 +96,7 @@ body {
 }
 
 
-        /* nav bar*/
+                                    /* nav bar*/
 
 .menu {
     width: 100%;
@@ -110,7 +110,11 @@ body {
     justify-content: space-between;
 }
 
-.menu ul {
+#hamb {
+    display: none;
+}
+
+.hamb_list {
     display: flex;
     align-items: center;
     margin: 0;
@@ -151,7 +155,7 @@ body {
 }
 
 
-        /* Hero section */
+                                    /* Hero section */
 
 .hero {
     height: 100vh;
@@ -234,7 +238,7 @@ body {
 }
 
 
-        /* tartalom */
+                                                            /* tartalom */
 
 .content {
     width: 70%;
@@ -260,16 +264,6 @@ body {
     box-shadow: 1px 1px 1px var(--primary);
 }
 
-.aboutme-info {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    flex: 1;
-    padding: 2rem;
-    gap: 2rem;
-}
-
 .boxh2-decor {
     display: flex;
     flex-direction: row;
@@ -293,12 +287,29 @@ body {
     color: var(--muted-text);
 }
 
+/* rólam */
+
+.aboutme-info {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    flex: 1;
+    padding: 2rem;
+    gap: 2rem;
+}
+
 .abouteme-img {
     flex: 1;
     height: 100%;
     max-width: 300px;
 }
 
+.hidden {
+    display: none;
+}
+
+                                /* gombok */
 .btn {
     all: unset;
     cursor: pointer;
@@ -321,7 +332,7 @@ body {
     transform: scale(1.04);
     box-shadow: 0px 4px 8px var(--bg);
 }
-
+                                                /* alakzat */
 .form {
     display: flex;
     flex-direction: row;
@@ -363,7 +374,7 @@ body {
 }
 
 
-        /* szolgáltatások */
+                                                    /* szolgáltatások */
 
 .services {
     padding: 2rem;
@@ -451,7 +462,7 @@ body {
     opacity: 0.8;
 }
 
-
+                                                /* Footer */
 footer {
     background-color: var(--layout);
     display: flex;
@@ -472,3 +483,171 @@ footer {
     gap: 1rem;
 }
 
+/* ideiglenes téma választó */
+
+.szin {
+    all: unset;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: fit-content;
+    background-color: var(--layout);
+    color: var(--muted-text);
+    padding: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    z-index: 100;
+    
+    box-shadow: 1px 1px 1px var(--primary), -1px -1px 1px var(--line);
+}
+
+.szin:hover {
+    background-color: var(--primary);
+    color: var(--text);
+    transform: scale(1.04);
+    box-shadow: 0px 4px 8px var(--bg);
+}
+
+.ideiglenesdiv {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    bottom: 70px;
+    right: 20px;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+    background: rgba(10, 10, 15, 0.8);
+    border-radius: 8px;
+    height: 1px;
+    overflow: hidden;
+    transition: height 0.2s ease;
+}
+
+.kapcs {
+    height: 170px;
+}
+
+.btns {
+    all: unset;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+}
+
+
+@media (max-width: 820px) {
+    
+    /*--- hamburger menu ---*/
+
+    .menu {
+        justify-content: center;
+    }
+
+    .hamb_list {
+        flex-direction: column;
+        position: absolute;
+        gap: 1rem;
+        background-color: var(--bgop);
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 1rem;
+        height: 0px;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+
+    #hamb {
+        display: unset;
+        cursor: pointer;
+        position: fixed;
+        padding: 10px;
+        padding-top: 0;
+        top: 5px;
+        right: 20px;
+        font-size: 50px;
+        z-index: 150;
+        background-color: var(--bgop);
+        border-radius: 14px;
+        
+    }
+
+    .hamb_on {
+        height: 250px;
+    }
+
+    #logo {
+        position: absolute;
+        left: 0;
+        background-color: var(--bgop);
+        padding: 4px;
+        border-radius: 8px;
+        z-index: 150;
+    }
+
+    /* rólam */
+
+    .init {
+        flex-direction:column-reverse;
+    }
+
+    .abouteme-img {
+        max-width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    .boxh2-decor {
+        display: none;
+    }
+    
+    .hidden {
+        display: unset;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .hidden hr {
+        width: 30%;
+    height: 1px;
+    border: none;
+    background-color: var(--line);
+    }
+
+    /* footer */
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+}
+
+@media (max-width: 660px) {
+    /*.hero {
+        flex-direction: column;
+    }*/
+
+    .hero-info {
+        position: absolute;
+        z-index: 10;
+        bottom: 80px;
+    }
+
+    .hero-img::before {
+        content: none;
+    }
+
+    .hero-img img {
+        clip-path: none;
+    }
+}

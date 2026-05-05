@@ -7,14 +7,19 @@
         <title>Lévai Gabriella</title>
     </head>
     <body>
-        <nav class="menu">
-            <a href="#hero"><img src="pictures/Logoinverse.png" alt="logo"></a>
-            <button onclick="changetheme('red')"  class="btn" style="height: 15px; margin-top: 2.1rem;">Red</button>
-            <button onclick="changetheme('blue')"  class="btn" style="height: 15px; margin-top: 2.1rem;">Blue</button>
-            <button onclick="changetheme('purple')"  class="btn" style="height: 15px; margin-top: 2.1rem;">Purple</button>
-            <button onclick="changetheme('gold')"  class="btn" style="height: 15px; margin-top: 2.1rem;">Gold</button>
-            <button onclick="changetheme('green')"  class="btn" style="height: 15px; margin-top: 2.1rem;">Green</button>
-            <ul>
+        <button class="szin" onclick="valt()">Szín</button>
+        <div class="ideiglenesdiv" id="ideiglenesdiv">
+            <button onclick="changetheme('red')"  class="btns" style="color: red;">&#9679;</button>
+            <button onclick="changetheme('blue')"  class="btns" style="color: blue;">&#9679;</button>
+            <button onclick="changetheme('purple')"  class="btns" style="color: purple;">&#9679;</button>
+            <button onclick="changetheme('gold')"  class="btns" style="color: gold;">&#9679;</button>
+            <button onclick="changetheme('green')"  class="btns" style="color: green;">&#9679;</button>
+        </div>
+        <div id="hamb" onclick="hamb_on()">&#9776;</div>
+        <nav class="menu"">
+            <a href="#hero"><img id="logo" src="pictures/Logoinverse.png" alt="logo"></a>
+            
+            <ul class="hamb_list" id="hamb_list">
                 <li><a href="#aboutme">Rólam</a></li>
                 <li><a href="#services">Szolgáltatások</a></li>
                 <li><a href="#galery">Galéria</a></li>
@@ -43,6 +48,7 @@
                         <button class="btn">Bővebben</button>
                     </div>
                     <img class="abouteme-img" src="pictures/aboutme.jpg" alt="Lévai Gabriella Személyi edző">
+                    <div class="hidden"><hr><h2>Rólam</h2><hr></div>
                 </div>
                 <div class="form">
                     <div class="front"></div>

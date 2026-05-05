@@ -63,7 +63,15 @@ function changetheme(themeType) {
             break;
     }};
 
+function hamb_on(){
+    const hamb_cont = document.getElementById("hamb_list");
+    hamb_cont.classList.toggle("hamb_on")
+}
 
+function valt() {
+    const div = document.getElementById("ideiglenesdiv");
+    div.classList.toggle("kapcs");
+};
 
    /* const img1 = document.getElementById("solo");
     const img2 = document.getElementById("group");
