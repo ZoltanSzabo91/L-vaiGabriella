@@ -54,3 +54,88 @@ setMap(
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.3197027070355!2d19.0282250125388!3d47.464199097679156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741ddbfaca09e79%3A0xc4c6ed726deabed2!2sChilli%20Fitness%20Budapest%20-%20Bik%C3%A1s%20park!5e0!3m2!1shu!2shu!4v1777549927616!5m2!1shu!2shu",
   false
 );
+
+
+
+
+                // Csomagok slide
+
+const images = [...document.querySelectorAll('.csomag_slide_item')];
+const prev = document.getElementById('prev_btn');
+const next = document.getElementById('next_btn');
+const h2 = document.getElementById('h2');
+const p = document.getElementById('p');
+
+let activeIndex = 0;
+updateImg();
+
+prev.addEventListener('click', () => {
+    activeIndex = activeIndex - 1;
+    if (activeIndex < 0){
+        activeIndex = images.length - 1;
+    }
+    updateImg();
+});
+next.addEventListener('click', () => {
+    activeIndex = activeIndex + 1;
+    if (activeIndex > images.length - 1){
+        activeIndex = 0;
+    }
+    updateImg();
+});
+
+function updateImg(){
+    let leftIndex = activeIndex - 1;
+    if (leftIndex === -1){
+        leftIndex = images.length -1;
+    }
+
+    let rightIndex = activeIndex + 1;
+    if (rightIndex === images.length){
+        rightIndex = 0;
+    }
+
+    
+
+    images.forEach((img, index) => {
+        img.classList.remove('active',
+                            'left',
+                            'right',
+                            'hide');
+
+        if (activeIndex === index){
+            img.classList.add('active');
+        }
+        if (index === rightIndex){
+            img.classList.add('right');
+        }
+        if (index === leftIndex){
+            img.classList.add('left')
+        }
+        if (index !== activeIndex && index !== leftIndex && index !== rightIndex){
+            img.classList.add('hide')
+        }
+    });
+};
+
+
+const container = document.querySelector('.csomag_slide_container');
+
+container.addEventListener('click', (e) => {
+    const slide = e.target.closest('.csomag_slide_item');
+    if (!slide) return;
+    if (slide.classList.contains('right')) {
+        activeIndex += 1;
+    }
+    if (slide.classList.contains('left')) {
+        activeIndex -= 1;
+    }
+    // körbeforgatás
+    while (activeIndex < 0) {
+        activeIndex += images.length;
+    }
+    while (activeIndex >= images.length) {
+        activeIndex -= images.length;
+    }
+    updateImg();
+});

@@ -378,7 +378,6 @@ hr{
     .todo_line_cont{
         flex-direction: row;
         justify-content: space-between;
-        align-items: ;
     }
     .round_cont{
         flex-direction: column;
@@ -403,4 +402,88 @@ hr{
         left: 12%;
         top: 50px;
     }
+}
+
+
+/* -- Csomagok -- */
+
+.csomagok h2{
+    text-align: center;
+}
+.csomagok hr{
+    background: linear-gradient(to right, var(--bg) 0%, var(--primary) 40%, var(--primary) 60%, var(--bg) 100%);
+    margin: 1rem auto;
+}
+
+.csomag_slide_cont{
+    position: relative;
+    background-color: var(--bg);
+    height: 300px;
+    width: 600px;
+    margin: auto;
+}
+.csomag_slide_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    border: solid 1px var(--primary);
+    background: radial-gradient(
+        circle at 30% 70%, 
+        var(--bg) 30%, 
+        var(--line) 100%);
+    position: absolute;
+    overflow: hidden;
+    width: 150px;
+    height: 220px;
+    border-radius: 16px;
+    top: 35px;
+    left: 225px;
+    box-shadow: 0 10px 15px rgba(22, 22, 22, 0.6);
+    transition: all .2s ease;
+}
+.csomag_slide_item hr{
+    background: linear-gradient(to right, var(--bg) 0%, var(--primary) 40%, var(--primary) 60%, var(--bg) 100%);
+}
+.active{
+    opacity: 1;
+    z-index: 10;
+    transform: translateX(0) scale(1);
+}
+.left{
+    opacity: 0.8;
+    transform: translateX(-100px) scale(0.8);
+    z-index: 9;
+}
+.right{
+    opacity: 0.8;
+    transform: translateX(100px) scale(0.8);
+    z-index: 9;
+}
+.hide{
+    opacity: 0;
+    pointer-events: none;
+    left: 225px;
+}
+#prev_btn{
+    position: absolute;
+    top: 130px;
+    left: 5px;
+    height: 40px;
+    width: 5px;
+    font-size: 30px;
+    cursor:pointer;
+    user-select:none;
+}
+#next_btn{
+    position: absolute;
+    top: 130px;
+    left: 580px;
+    height: 40px;
+    width: 5px;
+    font-size: 30px;
+    cursor:pointer;
+    user-select:none;
 }
