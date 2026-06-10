@@ -294,3 +294,113 @@ hr{
 .szolg_container p{
     text-align: left;
 }
+
+
+/* -- To Do Line Section -- */
+
+.todo_line_sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.todo_line_sec h2{
+    text-align: center;
+}
+.todo_line_sec hr{
+    background: linear-gradient(to right, var(--layout) 0%, var(--primary) 40%, var(--primary) 60%, var(--layout) 100%);
+    margin: 1rem auto;
+}
+
+    /* - Line - */
+
+    .todo_line_cont{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 85%;
+    }
+    .round_cont{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .round{
+        height: 40px;
+        width: 40px;
+        border: solid 3px var(--primary);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        background: var(--layout);
+    }
+    .round_holder{
+        width: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .line_under_round{
+        height: 0px;
+        width: calc(100% - 200px);
+        position: absolute;
+        border: dotted 2px var(--line);
+        z-index: 1;
+        left: 100px;
+    }
+
+
+
+
+    /* - description - */
+
+    .todo_line_desc{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 150px;
+    }
+    .todo_card{
+        width: 180px;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        margin-top: 2rem;
+    }
+
+@media (max-width: 900px) {
+    .todo_line_cont{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: ;
+    }
+    .round_cont{
+        flex-direction: column;
+        height: auto;
+        flex: 0.5;
+    } 
+    .todo_line_desc{
+        flex: 1.5;
+        flex-direction: column;
+        height: auto;
+        justify-content: space-between;
+    }
+    .round_holder, .todo_card{
+        width: auto;
+        margin: 1rem;
+        justify-content: center;
+        height: 100px;
+    }
+    .line_under_round{
+        width: 0px;
+        height: calc(100% - 100px);
+        left: 12%;
+        top: 50px;
+    }
+}

@@ -2,7 +2,7 @@
 <html lang="hun">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link href="css/css.css" rel="stylesheet">
         <link rel="stylesheet" href="css/sections.css">
@@ -26,15 +26,17 @@
                 <div class=hero-info>
                     <p style="color: var(--primary); text-transform: uppercase;" class="hero-text">szeméyli edző</p>
                     <h1 class="hero-text">Lévai Gabriella</h1>
+                    <hr>
                     <h2 class="hero-text">Célod az én kihívásom, sikered a közös győzelmünk!</h2>
                     <p class="hero-text">Személyre szabott edzés és táplálkozási tanácsadás nőknek, szélsőségek nélkül - online és személyesen.</p>
-                    <button class="btn">Írj nekem</button>
-                </div>
-                <div class="hero-img">
-                    <img src="pictures/hero.png" alt="Lévai Gabriella">
+                    <button class="btn hero-btn">Írj nekem</button>
                 </div>
             </div>
-            <div class="szemlelet_container">
+            
+        </header>
+
+        <main class="content">
+            <section class="szemlelet_container">
                 <div class="szemlelet_item">
                     <img class="szemlelet_img" style="margin-top: 20px;" src="pictures/Szemlelet/Taplalkozasi_tanacsado.png" alt="Táplálkozási tanácsadó, Személyi edző">
                     <p>Személyi edző & táplálkozási tanácsadó</p>
@@ -54,10 +56,7 @@
                     <img class="szemlelet_img" src="pictures/Szemlelet/fenntarthato_szemlelet.png" alt="Fenntartható szemlélet">
                     <p>Fenntartható szemlélet</p>
                 </div>
-            </div>
-        </header>
-
-        <main class="content">
+            </section>
 
             <section class="row_one Nemsablon_content">
                 <div class="Nemsablon_description">
@@ -176,37 +175,43 @@
                     A személyi edzés alkalmak és az online csomag 30 napos érvényességgel rendelkeznek.</p>
             </section>
 
-            <section class="row_two">
+            <section class="row_two todo_line_sec">
                 <h2>Hogyan dolgozunk együtt?</h2>
-                <div>
-                    <div class="line">
-                        <div>
-                            <div><h3>1</h3></div>
+                <hr>
+                <div class="todo_line_cont">
+                    <div class="round_cont">
+                        <div class="line_under_round"></div>
+                        <div class="round_holder"><div class="round"><h3>1</h3></div></div>
+                        <div class="round_holder"><div class="round"><h3>2</h3></div></div>
+                        <div class="round_holder"><div class="round"><h3>3</h3></div></div>
+                        <div class="round_holder"><div class="round"><h3>4</h3></div></div>
+                        <div class="round_holder"><div class="round"><h3>5</h3></div></div>
+                    </div>
+                
+                    <div class="todo_line_desc">
+                        <div class="todo_card">
                             <h3>Kapcsolatfelvétel</h3>
                             <p>Írj nekem és megbeszéljük a céljaidat, elvárásaidat.</p>
                         </div>
-                        <div>
-                            <div><h3>2</h3></div>
+                        <div class="todo_card">
                             <h3>Állapotfelmérés</h3>
                             <p>Átbeszéljük az életmódod és jelenlegi állapotod.</p>
                         </div>
-                        <div>
-                            <div><h3>3</h3></div>
+                        <div class="todo_card">
                             <h3>Egyéni terv</h3>
                             <p>Személyre szabott edzés- és táplálkozási tervet készítünk neked.</p>
                         </div>
-                        <div>
-                            <div><h3>4</h3></div>
+                        <div class="todo_card">
                             <h3>Követés</h3>
                             <p>Rendszeres ellenőrzés, támogatás és motiváció a fejlődéshez.</p>
                         </div>
-                        <div>
-                            <div><h3>5</h3></div>
+                        <div class="todo_card">
                             <h3>Finomhangolás</h3>
                             <p>A tervet folyamatosan igazítjuk a még jobb eredményért.</p>
                         </div>
                     </div>
                 </div>
+                <button class="btn">Kapcsolatfelvétel</button>
             </section>
 
             <section class="row_one">

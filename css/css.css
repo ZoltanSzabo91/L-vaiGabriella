@@ -11,6 +11,20 @@
     --text: #f5f5f5;
     --muted-text: #a1a1a1;
 }
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox */
+html {
+    scrollbar-width: none;
+}
+
+/* IE/régi Edge */
+body {
+    -ms-overflow-style: none;
+}
 
 html {
     scroll-behavior: smooth;
@@ -38,6 +52,29 @@ p {
     letter-spacing: 0.02em;
     font-weight: 300;
     font-size: 0.95rem;
+}
+                                /* gombok */
+.btn {
+    all: unset;
+    cursor: pointer;
+
+    width: fit-content;
+    background-color: var(--layout);
+    color: var(--muted-text);
+    padding: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    
+    box-shadow: 1px 1px 1px var(--primary), -1px -1px 1px var(--line);
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    color: var(--text);
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px var(--bg);
 }
 
                                     /* nav bar*/
@@ -68,7 +105,7 @@ p {
 }
 
 .menu img {
-    height: 80px;
+    height: 60px;
     margin: 12px 50px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -90,6 +127,7 @@ p {
 .menu ul li a:hover {
     background-color: var(--primary);
     color: var(--text);
+    transform: scale(1.1);
 }
 
 .menu.sticky-active {
@@ -104,105 +142,46 @@ p {
 
                                     /* Hero section */
 
-
-.hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-}
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.hero-info {
-    flex: 0.8;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    align-items: flex-start; 
-    text-align: left;
-
-    padding-left: 3rem;
-    max-width: 600px;
-}
-
-.hero-info h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0 0 10px 0;
-}
-
-.hero-info h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--muted-text);
-    margin: 0 0 20px 0;
-}
-
-.hero-info p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--muted-text);
-    margin-bottom: 30px;
-}
-
-.hero-img {
-    flex: 1.2;
+.hero-container{
     height: 80vh;
-    position: relative;
-    overflow: visible;
 }
-
-        /* PIROS HÁTTÉR (keret) */
-.hero-img::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: var(--primary);
-
-    clip-path: polygon(20% 0, 100% 0, 85% 100%, 0% 100%);
-
-    /* EZ HOZZA LÉTRE A KERETET */
-    transform: translateX(-15px);
-
-    z-index: 1;
-}
-
-.hero-text {
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-}
-
-
-        /* KÉP */
-
-.hero-img img {
-    width: 100%;
+.hero{
+    background: linear-gradient(
+            rgba(0,0,0,.3),
+            rgba(0,0,0,.3)),
+            url("../pictures/hero.png");
+    background-size: cover;
+    background-position: calc(50% + 150px) center;
+    background-repeat: no-repeat;
     height: 100%;
-    object-fit: cover;
-    object-position: calc(50% + 110px) center;
-    display: block;
-
-    position: relative;
-    z-index: 2;
-
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.hero-info{
+    margin: 0 5rem;
+    width: 45%;
+    max-height: 80%;
+    height: auto;
+}
+.hero-info p, .hero-info h1, .hero-info h2{
+    margin-top: 2rem;
+}
+.hero-btn{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
-/* -- Hero alatti rész -- */
+
+/* -- Szemlelet -- */
 
 .szemlelet_container{
     max-width: 1500px;
     min-width: 70%;
-    height: 20vh;
+    height: 150px;
     gap: 1rem;
-    margin: 0 1rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -228,34 +207,51 @@ p {
     background-color: var(--line);
 }
 
+@media (max-width: 820px){
+    .hero-container{
+        height: 100svh;
+    }
+    .hero-info{
+        width: 70%;
+        margin-left: 2rem;
+    }
+    .szemlelet_container {
+        height: 300px;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .szemlelet_item {
+        width: 45%;
+        gap: 0;
+        margin: 0;
+    }
+
+    .szemlelet_img {
+        margin: 0;
+    }
+
+    .middle {
+        display: none;
+    }
+}
+@media (max-width: 900px) and (orientation: landscape){
+    .hero-container{
+        height: 100svh;
+    }
+    .hero{
+        min-height: 550px;
+    }
+}
+
                                                             /* tartalom */
 
 
 
 
-                                /* gombok */
-.btn {
-    all: unset;
-    cursor: pointer;
 
-    width: fit-content;
-    background-color: var(--layout);
-    color: var(--muted-text);
-    padding: 0.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    
-    box-shadow: 1px 1px 1px var(--primary), -1px -1px 1px var(--line);
-}
-
-.btn:hover {
-    background-color: var(--primary);
-    color: var(--text);
-    transform: scale(1.04);
-    box-shadow: 0px 4px 8px var(--bg);
-}
 
 /* --- section --- */
 
@@ -293,33 +289,7 @@ footer {
 
 
 
-@media (max-width: 820px) {
-    .hero-container{
-        height: auto;
-    }
-    .hero{
-        height: 100vh;
-        }
-    .hero-img{
-        height: 100vh;
-    }
-    .szemlelet_container{
-        height: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 0;
-    }
-    .szemlelet_item{
-        width: 45%;
-        gap: 0;
-        margin: 0;
-    }
-    .szemlelet_img{
-        margin: 0;
-    }
-    .middle{
-        display: none;
-    }
+@media (max-width: 820px){
     
     
     /*--- hamburger menu ---*/
@@ -333,6 +303,7 @@ footer {
         position: absolute;
         gap: 1rem;
         background-color: var(--bgop);
+        backdrop-filter: blur(8px);
         width: 100%;
         justify-content: center;
         height: 0px;
@@ -378,24 +349,4 @@ footer {
         gap: 1rem;
     }
 
-}
-
-@media (max-width: 660px) {
-    
-    .hero-info {
-        position: absolute;
-        z-index: 10;
-        bottom: 1rem;
-        margin-bottom: 1.5rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-
-    .hero-img::before {
-        content: none;
-    }
-
-    .hero-img img {
-        clip-path: none;
-    }
 }
