@@ -119,7 +119,7 @@ function updateImg(){
 };
 
 
-const container = document.querySelector('.csomag_slide_container');
+const container = document.querySelector('.csomag_slide_cont');
 
 container.addEventListener('click', (e) => {
     const slide = e.target.closest('.csomag_slide_item');

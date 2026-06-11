@@ -146,13 +146,17 @@ p {
     height: 80vh;
 }
 .hero{
-    background: linear-gradient(
-            rgba(0,0,0,.3),
-            rgba(0,0,0,.3)),
-            url("../pictures/hero.png");
-    background-size: cover;
-    background-position: calc(50% + 150px) center;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+                url("../pictures/hero.png");
+    background-size: 
+                100% 100%,
+                cover;
+    background-position: 
+                center,
+                calc(50% + 150px) center;
+    background-repeat: 
+                no-repeat,
+                no-repeat;
     height: 100%;
     min-height: 550px;
     display: flex;
@@ -169,8 +173,7 @@ p {
     margin-top: 2rem;
 }
 .hero-btn{
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+    margin: 2rem 5rem;
 }
 
 
@@ -236,6 +239,9 @@ p {
     .middle {
         display: none;
     }
+    .hero-btn{
+        margin: 2rem auto;
+    }
 }
 @media (max-width: 900px) and (orientation: landscape){
     .hero-container{
@@ -246,10 +252,7 @@ p {
     }
 }
 
-                                                            /* tartalom */
-
-
-
+                                /* Content */
 
 
 
@@ -266,7 +269,7 @@ p {
     padding: 2rem;
 }
 
-                                                /* Footer */
+                                /* Footer */
 footer {
     background-color: var(--bg);
     display: flex;

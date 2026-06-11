@@ -16,7 +16,7 @@
 hr{
     border: none;
     width: 100px;
-    height: 3px;
+    height: 1px;
     background: linear-gradient(to right, var(--primary) 0%, var(--bg) 100%);
     margin: 1rem 0;
 }
@@ -406,8 +406,10 @@ hr{
 
 
 /* -- Csomagok -- */
-
 .csomagok h2{
+    text-align: center;
+}
+.csomagok p{
     text-align: center;
 }
 .csomagok hr{
@@ -441,8 +443,21 @@ hr{
     border-radius: 16px;
     top: 35px;
     left: 225px;
-    box-shadow: 0 10px 15px rgba(22, 22, 22, 0.6);
+    box-shadow: 0 10px 15px rgba(85, 1, 1, 0.6);
     transition: all .2s ease;
+    user-select: none;
+}
+.ajanlott{
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 40deg;
+    top: 15px;
+    left: 28%;
 }
 .csomag_slide_item hr{
     background: linear-gradient(to right, var(--bg) 0%, var(--primary) 40%, var(--primary) 60%, var(--bg) 100%);
@@ -486,4 +501,115 @@ hr{
     font-size: 30px;
     cursor:pointer;
     user-select:none;
+}
+@media (max-width: 640px){
+    .csomag_slide_item{
+        top: 140px;
+        left: 25px;
+    }
+    .csomag_slide_cont{
+        height: 500px;
+        width: 200px;
+        margin: auto;
+    }
+    .left{
+        transform: translateY(-100px) scale(0.8);
+    }
+    .right{
+        transform: translateY(100px) scale(0.8);
+    }
+    .hide{
+        left: 25px;
+    }
+    #prev_btn{
+        top: 10px;
+        left: 99px;
+        rotate: 90deg;
+    }
+    #next_btn{
+        left: 99px;
+        top: 440px;
+        rotate: 90deg;
+    }
+}
+
+
+/* -- Rólam -- */
+
+.rolam{
+    display: flex;
+    flex-direction: row;
+    height: 800px;
+    padding: 0;
+    justify-content: center;
+}
+.rolam_img{
+    height: 100%;
+    flex: 0.8;
+    width: 400px;
+    background: url("../pictures/aboutme.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.rolam_desc_cont{
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.rolam-list {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+}
+
+.rolam-list li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 22px 0;
+
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.rolam-list li i {
+    color: #e10600;
+    font-size: 1.8rem;
+
+    min-width: 32px;
+}
+@media (max-width: 640px){
+    .csomagok{
+        height: fit-content;
+    }
+    .rolam{
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .rolam_img{
+        height: 800px;
+        flex: none;
+        width: 100%;
+    }
+    .rolam_desc_cont{
+        flex: none;
+        height: auto;
+    }
+    .rolam_cim{
+        margin: auto;
+    }
+    .rolam_cim hr{
+        margin: 1rem auto;
+        background: linear-gradient(to right, var(--bg) 0%, var(--primary) 40%, var(--primary) 60%, var(--bg) 100%);
+    }
+    .rolam_btn{
+        margin: auto;
+    }
 }
