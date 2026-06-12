@@ -30,7 +30,7 @@
                     <h2 class="hero-text">Célod az én kihívásom, sikered a közös győzelmünk!</h2>
                     <p class="hero-text">Személyre szabott edzés és táplálkozási tanácsadás nőknek, szélsőségek nélkül - online és személyesen.</p>
                 </div>
-                <button class="btn hero-btn">Írj nekem</button>
+                <a href="#kapcsolatfelvetel" class="btn hero-btn">Írj nekem</a>
             </div>
             
         </header>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn">Kapcsolatfelvétel</button>
+                <a href="#kapcsolatfelvetel" class="btn">Kapcsolatfelvétel</a>
             </section>
 
             <div class="section_border"></div>
@@ -285,6 +285,27 @@
 
             <div class="section_border"></div>
 
+            <section class="row_one email" id="kapcsolatfelvetel">
+                <h2>Lépj velem kapcsolatba!</h2>
+                <hr>
+                <p>Küldj egy üzenetet és én felkereslek. Alakítsuk együtt a jövődet!</p>
+                    <form action="https://formspree.io/f/maqzpajv" method="post" id="my-form" class="email-cont">
+                        <label for="name">Név:</label>
+                        <input type="text" id="name" name="name" required placeholder="Kis Virág">
+
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="kisvirag@gmail.com">
+
+                        <label for="phone">Telefon szám:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+36 20 123 4567" pattern="^\+?[0-9\s-]{8,15}$">
+
+                        <label for="message">Üzenet:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Opcionális"></textarea>
+
+                        <button type="submit" class="btn" style="margin: auto;">Elküld</button>
+                        <p id="my-form-status"></p>
+                    </form>
+            </section>
         </main>
 
         <footer id="footer">

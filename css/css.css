@@ -72,7 +72,7 @@ p {
     width: fit-content;
     background-color: var(--layout);
     color: var(--muted-text);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 2.5rem;
     border-radius: 8px;
     transition: all 0.2s ease;
     box-shadow: 1px 1px 1px var(--primary), -1px -1px 1px var(--line);

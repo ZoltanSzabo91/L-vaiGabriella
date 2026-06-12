@@ -139,3 +139,47 @@ container.addEventListener('click', (e) => {
     }
     updateImg();
 });
+
+
+//Formspree
+
+const form = document.getElementById("my-form");
+const status = document.getElementById("my-form-status");
+
+form.addEventListener("submit", async function(event){
+    /*megakadályozza a böngésző újra töltését*/
+    event.preventDefault(); 
+    /*Beszedjük és eltároljuk az imputokban lévő adatokat*/
+    const data = new FormData(event.target); 
+    /*kicseréljük a gomb feliratát*/
+    const btn = form.querySelector('button');
+    const originalBtnText = btn.innerText;
+    btn.innerText = "Küldés folyamatban..."
+    btn.disabled = true; /*kikapcsoljuk a gomb kattintás funkcióját*/
+
+    try {
+        /*elküldjük az adatokat a Formspee-nek*/
+        const response = await fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {'Accept': 'application/json'}
+        });
+        //ha a küldés sikeres volt
+        if(response.ok){
+            status.innerHTML ="köszönjük! az üzenetet sikeresen megkaptuk";
+            status.className = "status-success";
+            form.reset();
+        } else{
+            status.innerHTML ="Hoppá! valamiért nem sokerült";
+            status.className = "status-error";
+        }
+    }
+    catch (error)
+    {
+        status.innerHTML ="Ellenőrizd az internet kapcsolatod!";
+        status.className = "status-error";
+    }
+    //Visszaállítjuk a gombot az eredeti állapotába
+    btn.innerText = originalBtnText;
+    btn.disabled = false;
+})
