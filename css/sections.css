@@ -15,7 +15,7 @@
 
 hr{
     border: none;
-    width: 100px;
+    width: 140px;
     height: 1px;
     background: linear-gradient(to right, var(--primary) 0%, var(--bg) 100%);
     margin: 1rem 0;
@@ -503,6 +503,9 @@ hr{
     user-select:none;
 }
 @media (max-width: 640px){
+    .csomagok{
+        height: fit-content;
+    }
     .csomag_slide_item{
         top: 140px;
         left: 25px;
@@ -538,80 +541,82 @@ hr{
 
 .rolam{
     display: flex;
-    flex-direction: row;
-    height: 800px;
-    padding: 0;
+    flex-direction: column;
+    height: 700px;
+    padding: 2rem;
     justify-content: center;
+    align-items: center;
+}
+.rolam_cim hr, .rolam_text hr{
+        margin: 1rem auto;
+        background: linear-gradient(to right, var(--bg) 0%, var(--primary) 40%, var(--primary) 60%, var(--bg) 100%);
+    }
+.rolam_desc_cont{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    max-width: 90%;
+    border: solid 1px var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.rolam_desc{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex: 2;
+}
+.rolam_cimek{
+    flex: 0.5;
+    min-width: 170px;
+    position: relative;
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+.rolam_cimek h3 {
+    font-size: 1.3rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 1rem;
+}
+.indicator{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 6px;
+    background-color: var(--primary);
+    transition: all 0.2s ease;
+}
+.rolam_text{
+    overflow-y: auto;
+    margin: 1.3rem;
+    max-width: 650px;
+    border-left: solid 1px var(--line);
+    padding-left: 1rem;
+    height: 500px;
+}
+.rolam_text p{
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin: 2rem 0;
+    line-height: 1.8;
 }
 .rolam_img{
-    height: 100%;
-    flex: 0.8;
-    width: 400px;
+    height: 600px;
+    width: 450px;
     background: url("../pictures/aboutme.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-.rolam_desc_cont{
-    flex: 1.2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem;
-}
-.rolam-list {
-    list-style: none;
-    padding: 0;
-    margin: 40px 0;
+    flex: 1;
 }
 
-.rolam-list li {
-    display: flex;
-    align-items: center;
-    gap: 20px;
 
-    padding: 22px 0;
-
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 400;
-
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.rolam-list li i {
-    color: #e10600;
-    font-size: 1.8rem;
-
-    min-width: 32px;
-}
 @media (max-width: 640px){
-    .csomagok{
-        height: fit-content;
-    }
-    .rolam{
-        flex-direction: column-reverse;
-        height: auto;
-    }
-    .rolam_img{
-        height: 800px;
-        flex: none;
-        width: 100%;
-    }
-    .rolam_desc_cont{
-        flex: none;
-        height: auto;
-    }
-    .rolam_cim{
-        margin: auto;
-    }
-    .rolam_cim hr{
-        margin: 1rem auto;
-        background: linear-gradient(to right, var(--bg) 0%, var(--primary) 40%, var(--primary) 60%, var(--bg) 100%);
-    }
-    .rolam_btn{
-        margin: auto;
-    }
+    
 }
 
 /* -- email -- */

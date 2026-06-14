@@ -141,6 +141,46 @@ container.addEventListener('click', (e) => {
 });
 
 
+//Rolam
+
+const cimek = document.querySelectorAll('.rolam_cimek h3');
+const observe = document.querySelectorAll('.observe-section');
+const rolamText = document.querySelector('.rolam_text');
+const indicator = document.querySelector('.indicator');
+
+cimek.forEach((cim, index) => {
+    cim.addEventListener('click', () => {
+
+        const top =
+            observe[index].getBoundingClientRect().top -
+            rolamText.getBoundingClientRect().top +
+            rolamText.scrollTop;
+
+        rolamText.scrollTo({
+            top,
+            behavior: 'smooth'
+        });
+
+    });
+});
+
+rolamText.addEventListener('scroll', () => {
+    let activeIndex = 0;
+    let closest = Infinity;
+
+    observe.forEach((section, index) => {
+        const distance = Math.abs(
+            section.getBoundingClientRect().top
+        );
+        if (distance < closest) {
+            closest = distance;
+            activeIndex = index;
+        }
+    });
+
+    indicator.style.top =
+        `${cimek[activeIndex].offsetTop}px`;
+});
 //Formspree
 
 const form = document.getElementById("my-form");
