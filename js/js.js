@@ -165,18 +165,27 @@ cimek.forEach((cim, index) => {
 });
 
 rolamText.addEventListener('scroll', () => {
+
+    const scrollPos = rolamText.scrollTop;
+
     let activeIndex = 0;
-    let closest = Infinity;
 
     observe.forEach((section, index) => {
-        const distance = Math.abs(
-            section.getBoundingClientRect().top
-        );
-        if (distance < closest) {
-            closest = distance;
+
+        const sectionTop =
+            section.offsetTop - rolamText.offsetTop;
+
+        if (scrollPos >= sectionTop - 50) {
             activeIndex = index;
         }
     });
+
+    const maxScroll =
+        rolamText.scrollHeight - rolamText.clientHeight;
+
+    if (scrollPos >= maxScroll - 10) {
+        activeIndex = observe.length - 1;
+    }
 
     indicator.style.top =
         `${cimek[activeIndex].offsetTop}px`;

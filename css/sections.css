@@ -615,8 +615,24 @@ hr{
 }
 
 
-@media (max-width: 640px){
-    
+@media (max-width: 950px){
+    .rolam{
+        height: auto;
+    }
+    .rolam_desc_cont{
+        flex-direction: column;
+    }
+    .rolam_img{
+        flex: auto;
+        width: 100%;
+        height: 700px;
+        margin: auto;
+    }
+}
+@media (max-width: 700px) {
+    .rolam_desc{
+        flex-direction: column;
+    }
 }
 
 /* -- email -- */
