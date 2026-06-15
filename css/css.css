@@ -63,7 +63,10 @@ p {
     font-weight: 300;
     font-size: 0.95rem;
 }
-
+/* térkép "dark mode" */
+#map {
+    filter: invert(90%) hue-rotate(180deg);
+}
 /* gombok */
 
 .btn {
