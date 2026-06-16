@@ -331,6 +331,10 @@ footer {
     justify-content: space-around;
     padding: 1rem;
 }
+footer a{
+    text-decoration: none;
+    color: var(--muted-text);
+}
 
 .btn.active {
     background-color: var(--btnactive);
@@ -419,4 +423,17 @@ footer {
         align-items: center;
         gap: 1rem;
     }
+}
+
+
+.adatkezeles{
+    max-width: 1000px;
+    margin: auto;
+}
+.adatkezeles p{
+    padding-left: 1rem;
+}
+.adatkezeles a{
+    text-decoration: none;
+    color: var(--muted-text);
 }
